@@ -1,4 +1,5 @@
 ﻿module.exports = {
+  base: '/arch-vp/',
   title: '未来架构',
   description: 'Just playing arch',
   ga: 'ca-pub-9009841192314468',
