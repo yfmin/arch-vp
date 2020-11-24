@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>01-FLP不可能性原理 | 未来架构</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="Just playing arch">
+    
+    <link rel="preload" href="/arch-vp/assets/css/0.styles.1f3ac6c5.css" as="style"><link rel="preload" href="/arch-vp/assets/js/app.3699f0c5.js" as="script"><link rel="preload" href="/arch-vp/assets/js/2.c96ac697.js" as="script"><link rel="preload" href="/arch-vp/assets/js/11.6cd0a3fa.js" as="script"><link rel="prefetch" href="/arch-vp/assets/js/10.c5fb5b2e.js"><link rel="prefetch" href="/arch-vp/assets/js/12.2a5f2c8e.js"><link rel="prefetch" href="/arch-vp/assets/js/13.59f28601.js"><link rel="prefetch" href="/arch-vp/assets/js/14.d40128d8.js"><link rel="prefetch" href="/arch-vp/assets/js/15.69dded70.js"><link rel="prefetch" href="/arch-vp/assets/js/16.9162a421.js"><link rel="prefetch" href="/arch-vp/assets/js/17.12675db5.js"><link rel="prefetch" href="/arch-vp/assets/js/18.2ed64b5f.js"><link rel="prefetch" href="/arch-vp/assets/js/19.2a21234f.js"><link rel="prefetch" href="/arch-vp/assets/js/20.6a64954d.js"><link rel="prefetch" href="/arch-vp/assets/js/21.3c05e9a1.js"><link rel="prefetch" href="/arch-vp/assets/js/22.66345dd5.js"><link rel="prefetch" href="/arch-vp/assets/js/3.62297d3d.js"><link rel="prefetch" href="/arch-vp/assets/js/4.c18f7027.js"><link rel="prefetch" href="/arch-vp/assets/js/5.1e29fdb9.js"><link rel="prefetch" href="/arch-vp/assets/js/6.56affadf.js"><link rel="prefetch" href="/arch-vp/assets/js/7.bc28487c.js"><link rel="prefetch" href="/arch-vp/assets/js/8.b2f1412a.js"><link rel="prefetch" href="/arch-vp/assets/js/9.2d298a7b.js">
+    <link rel="stylesheet" href="/arch-vp/assets/css/0.styles.1f3ac6c5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/arch-vp/" class="home-link router-link-active"><!----> <span class="site-name">未来架构</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/arch-vp/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据结构与算法" class="mobile-dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/arch-vp/basic/01-FLP不可能性原理.html" class="nav-link">
+  概述
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/02-CAP理论.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/03-Base理论.html" class="nav-link">
+  线性表和符号表
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/04-分布式一致性.html" class="nav-link">
+  树
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/05-2PC-and-3PC.html" class="nav-link">
+  堆
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/06-Paxos算法.html" class="nav-link">
+  队列
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/06-Paxos算法.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/06-Paxos算法.html" class="nav-link">
+  图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分布式基础" class="dropdown-title"><span class="title">分布式基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="分布式基础" class="mobile-dropdown-title"><span class="title">分布式基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/arch-vp/basic/01-FLP不可能性原理.html" class="nav-link">
+  FLP不可能性原理
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/02-CAP理论.html" class="nav-link">
+  CAP原理
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/03-Base理论.html" class="nav-link">
+  Base理论
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/04-分布式一致性.html" class="nav-link">
+  分布式一致性
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/05-2PC-and-3PC.html" class="nav-link">
+  2PC-and-3PC
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/06-Paxos算法.html" class="nav-link">
+  Paxos算法
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/07-Raft算法.html" class="nav-link">
+  Raft算法
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/08-Zab协议.html" class="nav-link">
+  Zab协议
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术架构" class="dropdown-title"><span class="title">技术架构</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术架构" class="mobile-dropdown-title"><span class="title">技术架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/arch-vp/tech/db-design/" class="nav-link">
+  分库分表设计
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/tech/db-data/" class="nav-link">
+  冷热数据分离
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/tech/cache/" class="nav-link">
+  缓存设计原则
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/tech/tran/" class="nav-link">
+  分布式事务
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="场景架构" class="dropdown-title"><span class="title">场景架构</span> <span class="arrow down"></span></button> <button type="button" aria-label="场景架构" class="mobile-dropdown-title"><span class="title">场景架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/arch-vp/scene/shop/" class="nav-link">
+  电商(秒杀、库存、sku)
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/scene/pay/" class="nav-link">
+  支付(聚合、三方、银联)
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/scene/risk/" class="nav-link">
+  风控(支付、信贷)
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术选型" class="dropdown-title"><span class="title">技术选型</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术选型" class="mobile-dropdown-title"><span class="title">技术选型</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/arch-vp/scene/shop/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/scene/pay/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/scene/risk/" class="nav-link">
+  大数据
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/tech/db-design/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/tech/db-data/" class="nav-link">
+  运维
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/tech/cache/" class="nav-link">
+  测试
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/tech/tran/" class="nav-link">
+  产品
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Devops" class="dropdown-title"><span class="title">Devops</span> <span class="arrow down"></span></button> <button type="button" aria-label="Devops" class="mobile-dropdown-title"><span class="title">Devops</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/arch-vp/scene/shop/" class="nav-link">
+  持续交付方案
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/scene/shop/" class="nav-link">
+  自动化测试
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发资源" class="dropdown-title"><span class="title">开发资源</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发资源" class="mobile-dropdown-title"><span class="title">开发资源</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.bejson.com/jsoneditoronline" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  JSON编辑器
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="http://cron.qqe2.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CRON表达式
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://trends.google.com/trends" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  谷歌趋势
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="https://github.com/yfmin" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/yfmin/arch-vp" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/arch-vp/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据结构与算法" class="mobile-dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/arch-vp/basic/01-FLP不可能性原理.html" class="nav-link">
+  概述
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/02-CAP理论.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/03-Base理论.html" class="nav-link">
+  线性表和符号表
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/04-分布式一致性.html" class="nav-link">
+  树
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/05-2PC-and-3PC.html" class="nav-link">
+  堆
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/06-Paxos算法.html" class="nav-link">
+  队列
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/06-Paxos算法.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/06-Paxos算法.html" class="nav-link">
+  图
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分布式基础" class="dropdown-title"><span class="title">分布式基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="分布式基础" class="mobile-dropdown-title"><span class="title">分布式基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/arch-vp/basic/01-FLP不可能性原理.html" class="nav-link">
+  FLP不可能性原理
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/02-CAP理论.html" class="nav-link">
+  CAP原理
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/03-Base理论.html" class="nav-link">
+  Base理论
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/04-分布式一致性.html" class="nav-link">
+  分布式一致性
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/05-2PC-and-3PC.html" class="nav-link">
+  2PC-and-3PC
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/06-Paxos算法.html" class="nav-link">
+  Paxos算法
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/07-Raft算法.html" class="nav-link">
+  Raft算法
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/basic/08-Zab协议.html" class="nav-link">
+  Zab协议
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术架构" class="dropdown-title"><span class="title">技术架构</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术架构" class="mobile-dropdown-title"><span class="title">技术架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/arch-vp/tech/db-design/" class="nav-link">
+  分库分表设计
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/tech/db-data/" class="nav-link">
+  冷热数据分离
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/tech/cache/" class="nav-link">
+  缓存设计原则
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/tech/tran/" class="nav-link">
+  分布式事务
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="场景架构" class="dropdown-title"><span class="title">场景架构</span> <span class="arrow down"></span></button> <button type="button" aria-label="场景架构" class="mobile-dropdown-title"><span class="title">场景架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/arch-vp/scene/shop/" class="nav-link">
+  电商(秒杀、库存、sku)
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/scene/pay/" class="nav-link">
+  支付(聚合、三方、银联)
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/scene/risk/" class="nav-link">
+  风控(支付、信贷)
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术选型" class="dropdown-title"><span class="title">技术选型</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术选型" class="mobile-dropdown-title"><span class="title">技术选型</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/arch-vp/scene/shop/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/scene/pay/" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/scene/risk/" class="nav-link">
+  大数据
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/tech/db-design/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/tech/db-data/" class="nav-link">
+  运维
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/tech/cache/" class="nav-link">
+  测试
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/tech/tran/" class="nav-link">
+  产品
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Devops" class="dropdown-title"><span class="title">Devops</span> <span class="arrow down"></span></button> <button type="button" aria-label="Devops" class="mobile-dropdown-title"><span class="title">Devops</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/arch-vp/scene/shop/" class="nav-link">
+  持续交付方案
+</a></li><li class="dropdown-item"><!----> <a href="/arch-vp/scene/shop/" class="nav-link">
+  自动化测试
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发资源" class="dropdown-title"><span class="title">开发资源</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发资源" class="mobile-dropdown-title"><span class="title">开发资源</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.bejson.com/jsoneditoronline" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  JSON编辑器
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="http://cron.qqe2.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CRON表达式
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://trends.google.com/trends" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  谷歌趋势
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="https://github.com/yfmin" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/yfmin/arch-vp" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>01-FLP不可能性原理</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/arch-vp/basic/01-FLP%E4%B8%8D%E5%8F%AF%E8%83%BD%E6%80%A7%E5%8E%9F%E7%90%86.html#什么是flp不可能性原理" class="sidebar-link">什么是FLP不可能性原理？</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/arch-vp/basic/01-FLP%E4%B8%8D%E5%8F%AF%E8%83%BD%E6%80%A7%E5%8E%9F%E7%90%86.html#理解这一原理的一个不严谨的例子" class="sidebar-link">理解这一原理的一个不严谨的例子！</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/arch-vp/basic/01-FLP%E4%B8%8D%E5%8F%AF%E8%83%BD%E6%80%A7%E5%8E%9F%E7%90%86.html#这岂不是意味着研究一致性问题压根没有意义吗" class="sidebar-link">这岂不是意味着研究一致性问题压根没有意义吗？</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="什么是flp不可能性原理"><a href="#什么是flp不可能性原理" class="header-anchor">#</a> 什么是FLP不可能性原理？</h2> <blockquote><p>FLP不可能性原理 ：在网络可靠，存在节点失效（即使只有一个）的最小化异步模型系统中，不存在一个可以解决一致性问题的确定性算法。</p></blockquote> <p>提出该定理的论文是由Fischer,Lynch和Patterson三位作者于1985年发表，该论文后来获得了Dijkstra奖，Dijkstra就是发明最短路径算法的那位。</p> <p>FLP不可能原理实际上告诉人们，不要浪费时间去为异步分布式系统设计在任意场景下都能实现共识的算法。</p> <h2 id="理解这一原理的一个不严谨的例子"><a href="#理解这一原理的一个不严谨的例子" class="header-anchor">#</a> 理解这一原理的一个不严谨的例子！</h2> <p>三个人在不同房间，进行投票，投票结果是1或者0。三个人彼此可以通过电话进行沟通，但经常会有人睡着。比如某个时候，A投票0，B投票1，C收到了两人的投票，然后C睡着了。A和B则永远无法在有限时间内获知最终的结果。如果可以重新投票，则类似情形每次在取得结果前发生。</p> <p>FLP原理实际上说明对于允许节点失效的情况下，纯粹异步系统无法确保一致性在有限时间内完成。</p> <h2 id="这岂不是意味着研究一致性问题压根没有意义吗"><a href="#这岂不是意味着研究一致性问题压根没有意义吗" class="header-anchor">#</a> 这岂不是意味着研究一致性问题压根没有意义吗？</h2> <p>先别这么想，学术界做研究，考虑的是数学和物理上最极端的情形，很多时候现实生活要美好的多，感谢这个世界如此鲁棒！例如，上面例子中描述的最坏情形，总会发生的概率并没有那么大。</p> <p>科学告诉你什么是不可能的，工程则告诉你，付出一些代价，我可以把它变成可能。</p> <p>这就是工程的魅力。</p> <p>那么，退一步讲，在付出一些代价的情况下，我们能做到多少？</p> <p>回答这个问题的是另一个很出名的原理：CAP原理。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/yfmin/arch-vp/edit/master/basic/01-FLP不可能性原理.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/24/2020, 8:00:16 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/arch-vp/assets/js/app.3699f0c5.js" defer></script><script src="/arch-vp/assets/js/2.c96ac697.js" defer></script><script src="/arch-vp/assets/js/11.6cd0a3fa.js" defer></script>
+  </body>
+</html>
