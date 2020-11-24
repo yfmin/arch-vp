@@ -23,7 +23,18 @@
     
     nav: [
       { text: 'Home', link: '/' },
-      // { text: 'Guide', link: '/guide/' },
+      { text: '数据结构与算法',
+        items: [
+          { text: '概述', link: '/basic/01-FLP不可能性原理.md' },
+          { text: '排序', link: '/basic/02-CAP理论.md' },
+          { text: '线性表和符号表', link: '/basic/03-Base理论.md' },
+          { text: '树', link: '/basic/04-分布式一致性.md' },
+          { text: '堆', link: '/basic/05-2PC-and-3PC.md' },
+          { text: '队列', link: '/basic/06-Paxos算法.md' },
+          { text: '并查集', link: '/basic/06-Paxos算法.md' },
+          { text: '图', link: '/basic/06-Paxos算法.md' },
+        ]
+      },
       {
         text: '分布式基础',
         items: [
